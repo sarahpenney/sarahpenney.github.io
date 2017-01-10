@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SARAH PENNEY</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=500">
+  <meta name="keywords" content="Sarah, Penney, Web, Developer, Front, End, ScrollMagic, example, scrolling, attaching, scrollbar, parallax">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900" rel="stylesheet"> -->
+  <script type="text/javascript" src="js/app.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+  </head>
+
+
+<body>
+
+  <section id="">
+    <div id="description">
+      <h2 class="logo">S A R A H</h2>
+      <h2 class="logo" id="penney">P E N N E Y</h2>
+    </div>
+    <nav id="navBar">
+      <ul id="ulId">
+        <li class="li">GENERAL ASSEMBLY</li>
+        <!-- <li class="li"><a href="">PERSONAL PROJECTS</a></li> -->
+        <li class="li"><a href="contact.html">CONTACT INFO</a></li>
+      </ul>
+    </nav>
+  </section>
+
+<!-- BIO GROUP ////////////////////////////////-->
+<div id="section1"></div>
+  <div id="organisms"><img src="images/BioFamilyDark_zpsdlfktmqn.jpg" width="600"></div>
+  <!-- <div id="organisms1"><img src="images/JellyFancy_zps06stncjg copy.png" width="150"></div> -->
+  <div id="organisms2"><img src="images/old.jpg" width="300"></div>
+  <h1 class="title">Bioluminescence</h1>
+  <a href="organisms.html" id="organismsMore">Open</a>
+
+
+<!-- DISASTER GROUP////////////////////////////// -->
+<div id="section2"></div>
+  <div id="squawk"><img src="images/squawk.jpg" width="650"></div>
+  <div id="squawk1"><img src="images/squawk2.jpg" width="350"></div>
+  <h1 class="title" id="squawkTitle">Disaster Squawk</h1>
+  <a href="disaster.html" id="squawkMore">Open</a>
+
+
+  <!-- REINCARNATION GROUP///////////////////////// -->
+<div id="section3"></div>
+  <div id="black"></div>
+  <div id="rein"><img src="images/snake.jpg" width="650"></div>
+  <div id="rein1"><img src="images/gurumountain.jpg" width="270"></div>
+  <h1 class="title" id="reinTitle">Reincarnation</h1>
+  <a href="reincarnation.html" id="reinMore">Open</a>
+
+
+
+
+    <div style="position: fixed; overflow: visible; white-space: nowrap;
+      font-size: 0.85em; z-index: 9999; top: 657px; left: 160.5px;">
+        <div style="position: absolute; overflow: visible;
+           color: blue; bottom: 0px;">
+          <div style="position: relative; padding: 3px 4px; transform:
+          translateX(-100%);">
+          <a href="eliza/index.html">Need a chat?</a>
+          </div>
+        </div>
+    </div>
+
+    <div style="position: absolute; overflow: visible; white-space: nowrap; font-size: 0.85em; z-index: 9999;
+      left: 4100px; width: 1100px; top: 637px;">
+        <div style="position: absolute; overflow: visible; width: 0px; height: 0px;">
+          <div style="position: absolute; overflow: visible; color: green; bottom: 0px; right: -1px; padding: 2px 4px;">
+          <ul class="nav">
+            <li class="sectionNumbers"><a href="#section1">1</a></li>
+            <li class="sectionNumbers"><a href="#section2">2</a></li>
+            <li class="sectionNumbers">3</li>
+          </ul>
+          </div>
+        </div>
+      <!-- <div style="position: absolute; overflow: visible; border-width: 0px 0px 0px 1px;
+        border-style: solid; color: red; border-color: red; bottom: 0px; left: 100%; padding: 2px 4px;">More Info
+      </div> -->
+    </div>
+
+    <div style="position: absolute; overflow: visible; white-space: nowrap; font-size: 0.85em; z-index: 9999; left: 372px; width: 2000px; top: 637px;">
+        <div style="position: absolute; overflow: visible; width: 0px; height: 0px;">
+          <div style="position: absolute; overflow: visible;
+             color: green; bottom: 0px; right: -1px;
+            padding: 2px 4px;">
+            <ul class="nav">
+              <li class="sectionNumbers">1</li>
+              <li class="sectionNumbers"><a href="#section2">2</a></li>
+              <li class="sectionNumbers"><a href="#rein">3</a></li>
+            </ul>
+          </div>
+        </div>
+        <div style="position: absolute; overflow:
+          visible; color: green;
+           bottom: 0px; left: 100%; padding: 2px 4px;">
+          <ul class="nav">
+            <li class="sectionNumbers"><a href="#section1">1</a></li>
+            <li class="sectionNumbers">2</li>
+            <li class="sectionNumbers"><a href="#rein">3</a></li>
+          </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+       <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+       <script type="text/javascript">
+           $(function() {
+               $('ul.nav a').bind('click',function(event){
+                   var $anchor = $(this);
+
+                  //  if you want to use one of the easing effects:
+                   $('html, body').stop().animate({
+                       scrollLeft: $($anchor.attr('href')).offset().left
+                   }, 1500,'easeInOutExpo');
+
+                   $('html, body').stop().animate({
+                       scrollLeft: $($anchor.attr('href')).offset().left
+                   }, 1000);
+                   event.preventDefault();
+               });
+           });
+       </script>
+
+
+
+</body>
+</html>

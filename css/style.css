@@ -1,0 +1,307 @@
+
+
+body {
+   margin: 0;
+  font-family: helvetica;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  position: absolute;
+  left: 30px;
+  top: 10px;
+}
+
+#penney {
+  position: absolute;
+  top: 50px;
+}
+
+.title {
+  color: pink;
+  position: absolute;
+  left: 220px;
+  top: 215px;
+  font-size: 90px;
+}
+
+#navBar {
+  position: absolute;
+  top: 130px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#ulId {
+  margin-left: -10px;
+  padding-bottom: 10px;
+}
+
+.li {
+  padding-bottom: 15px;
+}
+
+.sectionNumbers {
+  display: inline;
+}
+
+#organisms {
+  position: absolute;
+  left: 500px;
+  top: 130px;
+}
+
+#organisms1 {
+  position: absolute;
+  left: 400px;
+  top: 150px;
+}
+
+#organisms2 {
+  position: absolute;
+  left: 1000px;
+  top: 70px;
+  z-index: -10;
+  opacity: 0.8;
+}
+
+#organismsMore {
+  position: absolute;
+  left: 400px;
+  top: 400px;
+  font-size: 20px;
+  color: grey;
+}
+
+
+
+/*#black {
+  position: absolute;
+  background-color: black;
+  height: 100vh;
+  width: 1700px;
+  z-index: -100;
+  left: 1800px;
+}*/
+
+#reinTitle {
+  left: 3950px;
+}
+
+#rein {
+  position: absolute;
+  left: 4400px;
+  top: 150px;
+}
+
+#rein1 {
+  position: absolute;
+  left: 4300px;
+  top: 30px;
+}
+
+#reinMore {
+  position: absolute;
+  left: 4290px;
+  top: 400px;
+  font-size: 20px;
+  color: grey;
+}
+
+
+
+#squawkTitle {
+  position: absolute;
+left: 2300px;
+top: 160px;
+}
+
+#squawk {
+  position: absolute;
+  left: 2550px;
+  top: 140px;
+}
+
+#squawk1 {
+  position: absolute;
+  left: 3040px;
+  top: 100px;
+}
+
+#squawkMore {
+  position: absolute;
+  left: 2470px;
+  top: 450px;
+  font-size: 20px;
+  color: grey;
+}
+
+/*//////////////////////////////CONTACT PAGE ///////////////////////////////*/
+
+#contact {
+  position: absolute;
+  top: 100px;
+  left: -45px;
+}
+
+#emailtag {
+  position: absolute;
+  top: 145px;
+  left: 85px;
+}
+
+#linked {
+  position: absolute;
+  top: 203px;
+  left: 130px;
+}
+
+#phone {
+  position: absolute;
+  top: 230px;
+  left: 85px;
+}
+
+#git {
+  position: absolute;
+  top: 285px;
+  left: 160px;
+}
+
+.purple {
+  color: black;
+}
+
+#instagram {
+  position: absolute;
+  right: 0;
+}
+
+.grey {
+  color: grey;
+  position: absolute;
+  top: 327px;
+  left: 83px;
+}
+
+/*////////////////////////////PAGES STYLE /////////////////*/
+
+.pageTitle {
+  color: pink;
+  margin-top: 50px;
+}
+
+.back {
+  color: gray;
+  /*position: absolute;
+  top: 250px;
+  margin-left: -80px;*/
+  margin-left: 130px;
+}
+
+.projectContainers {
+  margin-left: 100px;
+}
+
+
+/*////////////////////////////BIO STYLE/////////////////////////*/
+
+.bio {
+  /*background: black;*/
+}
+
+#bioImg {
+  width: 100%;
+  margin-top: -200px;
+  float: left;
+}
+
+.para {
+  float: right;
+  width: 305px;
+  margin-right: 250px;
+  margin-top: 50px;
+}
+
+/*/////////////////////////MAP STYLE///////////////////////*/
+#mapImg {
+  margin-top: -50px;
+}
+
+
+/*////////////////////////GAME STYLE//////////////////////*/
+#reinImg {
+  /*height: 100px;*/
+  /*margin-top: -20px;*/
+  height: 300px;
+}
+
+
+
+/*/////////////////////////FADE IN////////////////////////////*/
+
+
+
+body {
+    /*text-align: center;*/
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*//////////////////////////SLIDING TO/////////////////////////*/
+#section1 {
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  background-color: pink;
+}
+
+#section2 {
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  /*background-color: pink;*/
+  left: 2150px;
+}
