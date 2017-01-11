@@ -1,4 +1,10 @@
-
+/*ON ALL MOBILE STUFF:*/
+/*display: none*/
+@media screen and (min-width: 767px) {
+  #mobile, #mobile1 #mobile2, #mobile3, #mobile4 {
+    display: none;
+  }
+}
 
 body {
    margin: 0;
@@ -304,4 +310,20 @@ body {
   height: 100px;
   /*background-color: pink;*/
   left: 2150px;
+}
+
+/*////////////////////// MOBILE VERSION ////////////////////*/
+
+@media screen and (max-width: 767px) {
+   .desktop { display: none;}
+   body { background-color: black; }
+   /*#instagram { position: absolute; top: 500px;}*/
+   .mobilePros { width: 300px; margin-bottom: 10px; display: inline;}
+   #top { margin-top: 100px; }
+   .imagesFront { position: absolute; left: 35px;}
+   .logo { color: white; font-size: 15px; margin-top: 20px; left: 35px;}
+   #penney { margin-top: 5px;}
+   #bioImg { position: absolute; top: 300px;}
+   .pageTitle { top: 400px; }
+   #mobile4 {color: white; font-size: 12px; position: absolute; top: 580px; left: 100px;}
 }
