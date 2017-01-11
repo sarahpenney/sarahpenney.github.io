@@ -61,6 +61,12 @@ ul {
 
 .sectionNumbers {
   display: inline;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.numberz {
+  font-size: 20px;
 }
 
 #organisms {
@@ -332,3 +338,6 @@ body {
    .pageTitle { top: 400px; }
    #mobile4 {color: white; font-size: 12px; position: absolute; top: 580px; left: 100px;}
 }
+
+/*
+/////////////////////// CV PAGE //////////////////////////////////*/
