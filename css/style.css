@@ -13,7 +13,12 @@ body {
 
 a {
   text-decoration: none;
+  color: purple;
 }
+
+/*li {
+  color: purple;
+}*/
 
 .logo {
   position: absolute;
