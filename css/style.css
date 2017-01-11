@@ -314,7 +314,7 @@ body {
 
 /*////////////////////// MOBILE VERSION ////////////////////*/
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
    .desktop { display: none;}
    body { background-color: black; }
    /*#instagram { position: absolute; top: 500px;}*/
