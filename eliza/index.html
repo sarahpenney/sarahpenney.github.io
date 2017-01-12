@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body ng-controller="ElizaCtrl as eliza">
+
     <section class="elizaBody">
       <div id="session">
         <ul>
@@ -26,8 +27,8 @@
         <button class="elizaButtons" id="talkButton">Talk</button>
         <button type="button" class="elizaButtons" id="resetButton" ng-click="eliza.reset()">Reset</button>
       </form>
-      <audio src="audio/Eliza.mp3" autoplay="true" loop="true" hidden="true"></audio>
 
+      <audio src="audio/Eliza.mp3" autoplay="true" loop="true" hidden="true"></audio>
     </section>
 
   </body>
@@ -40,7 +41,9 @@
         <div style="position: relative; padding: 3px 4px; transform:
         translateX(-100%);">
         <a href="/index.html" class="back">Back</a>
+
         </div>
       </div>
+      
   </div>
 </html>

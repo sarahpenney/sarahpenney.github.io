@@ -107,7 +107,7 @@ form input {
 }
 
 a {
-  position: absolute;
+  display: inline-block;
   top: 5px;
   left: 48%;
   top: 75%;
@@ -117,4 +117,17 @@ a {
   position: absolute;
   left: -30px;
   top: -10px;
+}
+
+#micky {
+  position: absolute;
+  top: 0px;
+  /*left: 0px;*/
+  text-align: center;
+}
+
+#jamie {
+  position: absolute;
+  top: 50px;
+  left: 0px;
 }
