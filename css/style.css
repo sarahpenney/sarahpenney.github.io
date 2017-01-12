@@ -1,7 +1,7 @@
 /*ON ALL MOBILE STUFF:*/
 /*display: none*/
 @media screen and (min-width: 767px) {
-  #mobile, #mobile1 #mobile2, #mobile3, #mobile4 {
+  #mobile, #mobile1 #mobile2, #mobile3, #mobile4, #mobile10 {
     display: none;
   }
 }
@@ -336,7 +336,8 @@ body {
    #penney { margin-top: 5px;}
    #bioImg { position: absolute; top: 300px;}
    .pageTitle { top: 400px; }
-   #mobile4 {color: white; font-size: 12px; position: absolute; top: 580px; left: 100px;}
+   #mobile4 {color: white; font-size: 12px; position: absolute; top: 570px; left: 35px;}
+   #mobile10 { color: pink; font-size: 12px; position: absolute; top: 600px; left: 35px; }
 }
 
 /*
