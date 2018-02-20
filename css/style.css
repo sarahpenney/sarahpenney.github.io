@@ -388,11 +388,11 @@ clear: both;
     color: #555555;
     /* text-align: justify; */
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: helvetica;
 }
 .pu p a{
 color: #d91900;
-font-weight: bold;
+font-weight: 300;
 }
 .pu .x{
 float: right;
