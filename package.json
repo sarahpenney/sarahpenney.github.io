@@ -9,15 +9,16 @@
   },
   "devDependencies": {
     "grunt": "*",
+    "grunt-contrib-clean": "*",
     "grunt-contrib-connect": "*",
     "grunt-contrib-copy": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-uglify": "*",
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
     "grunt-curl": "*",
+    "grunt-git": "^1.0.9",
     "grunt-processhtml": "*"
   }
 }

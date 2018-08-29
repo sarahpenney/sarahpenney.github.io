@@ -105,6 +105,7 @@ module.exports = (grunt) ->
         options:
            livereload: true
 
+  @loadNpmTasks 'grunt-heroku'
   @loadNpmTasks 'grunt-contrib-copy'
   @loadNpmTasks 'grunt-contrib-clean'
   @loadNpmTasks 'grunt-contrib-connect'
