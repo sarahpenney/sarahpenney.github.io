@@ -22,9 +22,9 @@ volpe.factory = {
     },
     createAxeInventoryItem: function createAxeInventoryItem(data) {
         var item = this.createAbstractInventoryItem(data);
-        item.texture = mood.factory.createTexture("assets/axe-hand.png", 148, 138);
+        item.texture = mood.factory.createTexture("assets/png.png", 148, 138);
         // item.bitmap = mood.bitmaps.get("assets/axe-hand.png");
-        
+
         return item;
     }
 }
