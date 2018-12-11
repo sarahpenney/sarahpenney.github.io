@@ -202,7 +202,7 @@ volpe.mapdata = {
             }),
             // 42
             mood.factory.createTile({
-              texture: mood.factory.createTexture("assets/coin.png", 256, 256),
+              texture: mood.factory.createTexture("assets/dragonfruit.png", 256, 256),
             }),
             // 43
             mood.factory.createTile({
