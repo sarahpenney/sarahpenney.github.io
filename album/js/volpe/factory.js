@@ -22,8 +22,8 @@ volpe.factory = {
     },
     createAxeInventoryItem: function createAxeInventoryItem(data) {
         var item = this.createAbstractInventoryItem(data);
-        item.texture = mood.factory.createTexture("assets/png.png", 148, 138);
-        // item.bitmap = mood.bitmaps.get("assets/axe-hand.png");
+        item.texture = mood.factory.createTexture("assets/rock-hand.png", 148, 138);
+        // item.bitmap = mood.bitmaps.get("assets/rock-hand.png");
 
         return item;
     }
