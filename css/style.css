@@ -1,7 +1,33 @@
+/* .check_box {
+  display:none;
+}
+
+.check_box + label{
+  background:url('/images/LM_DT.png') no-repeat;
+  background-color: black;
+  height: 600px;
+  width: 400px;
+  display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+.check_box:checked + label{
+    background:url('/images/DM_DT.png') no-repeat;
+    background-color: red;
+    height: 600px;
+  width: 400px;
+  display:inline-block;
+    padding: 0 0 0 0px;
+} */
+
+
+
+
+
 /*ON ALL MOBILE STUFF:*/
 /*display: none*/
 @media screen and (min-width: 767px) {
-  #mobile, #mobile1 #mobile2, #mobile3, #mobile4, #mobile10 {
+  #mobile, #mobile1 #mobile2, #mobile3, #mobile4, #mobile10, .show_on_mobile {
     display: none;
   }
 }
@@ -327,8 +353,9 @@ body {
 /*////////////////////// MOBILE VERSION ////////////////////*/
 
 @media screen and (max-width: 800px) {
-   .desktop { display: none;}
-   body { background-color: black; }
+  .show_on_mobile {display:block!important;}
+   .hide { display: none!important;}
+   /* body { background-color: black; } */
    /*#instagram { position: absolute; top: 500px;}*/
    .mobilePros { width: 300px; margin-bottom: 10px; display: inline;}
    #top { margin-top: 100px; }
@@ -339,6 +366,8 @@ body {
    .pageTitle { top: 400px; }
    #mobile4 {color: white; font-size: 12px; position: absolute; top: 570px; left: 35px;}
    #mobile10 { color: pink; font-size: 12px; position: absolute; top: 600px; left: 35px; }
+
+   .fullwidth {width: 100%;}
 }
 
 /*
