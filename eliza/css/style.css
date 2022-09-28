@@ -47,8 +47,8 @@ section {
 }
 
 form input {
-  font-size: 14px;
-  text-align: left;
+  font-size: 20px;
+  text-align: center;
 }
 
 #session {
@@ -74,7 +74,7 @@ form input {
   display: inline-block;
   width: 60px;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
 }
 
 #session ul li span.eliza {
@@ -96,7 +96,7 @@ form input {
   background-image: url('https://s-media-cache-ak0.pinimg.com/236x/ee/d5/cb/eed5cb9f88a932f56863a58e1c7b96dc.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
+  width: 90vw;
 }
 
 #resetButton {
