@@ -3,6 +3,7 @@
 // }
 
 var image_tracker = 'orange';
+
  
  function pictureChange(){
  var image = document.getElementById('theImage');
@@ -20,7 +21,11 @@ var image_tracker = 'orange';
  else elem.value = "switch to: DARKMODE";
 
 
+
+
+
  }
+
 
 
 
@@ -41,7 +46,6 @@ var image_tracker = 'orange';
  var elem = document.getElementById("theButtonMobile");
  if (elem.value=="switch to : DARKMODE") elem.value = "switch to : LIGHTMODE";
  else elem.value = "switch to : DARKMODE";
-
 
  }
 
