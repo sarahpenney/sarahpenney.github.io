@@ -1,27 +1,6 @@
-/* .check_box {
-  display:none;
+.buttonhover:hover {
+  background-color:#9c6116;
 }
-
-.check_box + label{
-  background:url('/images/LM_DT.png') no-repeat;
-  background-color: black;
-  height: 600px;
-  width: 400px;
-  display:inline-block;
-    padding: 0 0 0 0px;
-}
-
-.check_box:checked + label{
-    background:url('/images/DM_DT.png') no-repeat;
-    background-color: red;
-    height: 600px;
-  width: 400px;
-  display:inline-block;
-    padding: 0 0 0 0px;
-} */
-
-
-
 
 
 /*ON ALL MOBILE STUFF:*/
