@@ -8,11 +8,11 @@ var image_tracker = 'orange';
  function pictureChange(){
  var image = document.getElementById('theImage');
  if(image_tracker=='orange'){
- image.src='images/MC_DM.png';
+ image.src='images/MC_DM_2.png';
  image_tracker='blue';
  }
  else{
- image.src='images/MC_LM.png';
+ image.src='images/MC_LM_2.png';
  image_tracker='orange';
  }
 
@@ -35,11 +35,11 @@ var image_tracker = 'orange';
  function pictureChangeMobile(){
  var image = document.getElementById('theImageMobile');
  if(image_trackerMobile=='orangeMobile'){
- image.src='images/MC_DM.png';
+ image.src='images/MC_DM_2.png';
  image_trackerMobile='blueMobile';
  }
  else{
- image.src='images/MC_LM.png';
+ image.src='images/MC_LM_2.png';
  image_trackerMobile='orangeMobile';
  }
 
