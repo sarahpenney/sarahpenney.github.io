@@ -161,6 +161,88 @@
     font-size: 16px;
     cursor: pointer;
 }
+
+/* Floating Hearts Animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: 0;
+    font-size: 30px;
+    color: red;
+    animation: floatUp 3s ease-in forwards;
+    z-index: 1000;  /* Make sure hearts are above other content */
+    pointer-events: none; /* So they don't interfere with clicks */
+}
+
+
+
+
+
+
+
+
+
+
+/* Floating Hearts Animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: 0;
+    font-size: 30px;
+    color: red;
+    animation: floatUp 3s ease-in forwards;
+    z-index: 9999;  /* Ensure hearts are above everything else */
+    pointer-events: none; /* Prevent hearts from interfering with other interactions */
+    user-select: none; /* Prevent selection of the hearts */
+}
+
+/* Make sure hearts stay above the phone and popup elements */
+body {
+    position: relative;
+}
+
+#sentPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000; /* Ensure the popup is on top of the hearts */
+}
+
+#sentPopup.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
     </style>
 </head>
 <body>
@@ -245,32 +327,32 @@
         setViewportHeight();
 
         function moveToNextMessage() {
-            if (swipeLocked) return;
-            swipeLocked = true;
+    if (swipeLocked) return;
+    swipeLocked = true;
 
-            // Move current text out to the left and the next text in from the right
-            textContainer.style.transition = 'transform 0.5s ease';
-            textContainer.style.transform = `translateX(-100%)`;
+    // Move current text out to the left and the next text in from the right
+    textContainer.style.transition = 'transform 0.3s ease';  // Faster transition
+    textContainer.style.transform = 'translateX(-100%)';  // Slide out
 
-            // After the slide out, update the message and reset position
-            setTimeout(() => {
-                currentIndex = (currentIndex + 1) % messages.length;
-                updateMessage();
-                textContainer.style.transition = 'none'; // Disable transition momentarily
-                textContainer.style.transform = 'translateX(0)'; // Reset position to bring in the new message
+    // After the slide out, update the message and reset position
+    setTimeout(() => {
+        currentIndex = (currentIndex + 1) % messages.length;
+        updateMessage();
+        textContainer.style.transition = 'none'; // Disable transition momentarily
+        textContainer.style.transform = 'translateX(0)'; // Reset position to bring in the new message
 
-                // Re-enable transition to allow next swipe animation
-                setTimeout(() => {
-                    textContainer.style.transition = 'transform 0.5s ease';
-                }, 50); // Slight delay before re-enabling transition
+        // Re-enable transition to allow next swipe animation
+        setTimeout(() => {
+            textContainer.style.transition = 'transform 0.3s ease';  // Re-enable fast transition
+        }, 50); // Slight delay before re-enabling transition
 
-                resetInactivityTimer();
-            }, 500); // Wait for the current text to finish sliding out
+        resetInactivityTimer();
+    }, 300); // Reduced waiting time to make the transition faster
 
-            setTimeout(() => {
-                swipeLocked = false;
-            }, 1000); // Lock for enough time to finish animation
-        }
+    setTimeout(() => {
+        swipeLocked = false;
+    }, 500); // Lock for less time to enable quicker swipes
+}
 
         function showHeart() {
             arrow.style.display = 'none';
@@ -334,7 +416,36 @@
             return re.test(String(email).toLowerCase());
         }
 
-        function sendEmail() {
+// Function to create and animate hearts
+function createHearts() {
+    const numHearts = 20;  // Number of hearts to float up
+    const screenWidth = window.innerWidth;
+
+    for (let i = 0; i < numHearts; i++) {
+        // Create a new heart element
+        const heart = document.createElement("div");
+        heart.classList.add("floating-heart");
+        heart.innerHTML = "&#10084;";  // Heart symbol
+
+        // Randomize starting position of the heart
+        const startX = Math.random() * screenWidth;
+        const delay = Math.random() * 2;  // Random delay for each heart
+
+        // Set the initial position of the heart
+        heart.style.left = `${startX}px`;
+        heart.style.animationDelay = `${delay}s`;
+
+        // Append the heart to the body
+        document.body.appendChild(heart);
+
+        // Remove the heart after the animation completes (3s)
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
+}
+
+function sendEmail() {
     const emailAddress = document.getElementById("email").value;
 
     if (emailAddress && isValidEmail(emailAddress)) {
@@ -355,6 +466,11 @@
 
                 // Show the "Joined the list" confirmation popup
                 document.getElementById('sentPopup').classList.add('active');
+
+                   // Create floating hearts
+                   createHearts();
+
+                
             })
             .catch(function(error) {
                 console.error('Error details:', error);
