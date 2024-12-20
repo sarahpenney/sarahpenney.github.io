@@ -31,7 +31,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            font-size:20px;
+            font-size: 20px;
             font-weight: bold;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -125,10 +125,45 @@
             font-size: 16px;
             cursor: pointer;
         }
+
+        /* SENT Popup Styles */
+.sent-popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#sentPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#sentPopup.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+#sentPopup button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
-    
     <div class="phone" id="phone">
         <div class="text-container" id="text-container">
             <div class="text" id="text1">stop swiping</div>
@@ -142,17 +177,25 @@
         <!-- Heart icon will be shown when popup is triggered -->
         <div class="heart">&#10084;</div>
     </div>
-  
 
     <div class="popup" id="popup">
         <div class="popup-box">
             <p style="font-family: 'Times New Roman';">Apply to join our service</p>
             <input type="email" placeholder="Enter your email" id="email" />
-            <button style="font-family: 'Times New Roman';border: none; background-color: white;" onclick="closePopup()">&gt;&nbsp;&nbsp;Submit&nbsp;&nbsp;&lt;</button>
+            <button style="font-family: 'Times New Roman';border: none; background-color: white;" onclick="sendEmail()">&gt;&nbsp;&nbsp;Submit&nbsp;&nbsp;&lt;</button>
+        </div>
+    </div>
+
+    <!-- SENT Popup -->
+    <div class="popup" id="sentPopup">
+        <div class="sent-popup">
+            <p>Joined the list!</p>
         </div>
     </div>
 
     <script>
+ 
+
         const messages = [
             "stop swiping",
             "you can stop",
@@ -184,7 +227,7 @@
             inactivityTimeout = setTimeout(() => {
                 popup.classList.add('active');
                 showHeart();
-            }, 5000);
+            }, 5000); // 5 seconds inactivity
         }
 
         function closePopup() {
@@ -286,20 +329,68 @@
             isSwiping = false;
         });
 
-        window.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-                moveToNextMessage();  // Left swipe (Next)
-            }
-        });
+        function isValidEmail(email) {
+            const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return re.test(String(email).toLowerCase());
+        }
 
-        window.addEventListener('wheel', (event) => {
-            if (event.deltaY > 0) {
-                moveToNextMessage();  // Left swipe (Next)
-            }
-        });
+        function sendEmail() {
+    const emailAddress = document.getElementById("email").value;
 
+    if (emailAddress && isValidEmail(emailAddress)) {
+        const templateParams = {
+            from_name: 'John Doe',
+            from_email: emailAddress,
+            message: 'New submission: ' + emailAddress
+        };
+
+        // Send the email using the correct service ID and template ID
+        emailjs.send('GmailTestID', 'TestTemplate', templateParams)
+            .then(function(response) {
+                console.log('Email sent successfully!', response);
+
+                // Hide the arrow and text
+                arrow.style.display = 'none';
+                textContainer.style.display = 'none';
+
+                // Show the "Joined the list" confirmation popup
+                document.getElementById('sentPopup').classList.add('active');
+            })
+            .catch(function(error) {
+                console.error('Error details:', error);
+                alert('Email sending failed! Please check the details and try again.');
+            });
+    } else {
+        alert('Please enter a valid email address.');
+    }
+
+    closePopup();  // Close the original popup after submission
+}
+
+// Close the SENT popup after clicking OK
+function closeSentPopup() {
+    document.getElementById('sentPopup').classList.remove('active');
+    
+    // Show the arrow and text again after closing the SENT popup
+    arrow.style.display = 'block';
+    textContainer.style.display = 'flex';  // Restore the text container
+    
+    closePopup(); // Also close the email input popup
+}
+
+        // Start by updating the first message
         updateMessage();
         resetInactivityTimer();
     </script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "cIFM4_MT37wAS64r5",
+  });
+})();
+</script>
 </body>
 </html>
