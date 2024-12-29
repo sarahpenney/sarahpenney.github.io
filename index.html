@@ -255,14 +255,14 @@ body {
         </div>
 
         <!-- Arrow pointing left -->
-        <div class="arrow">&#8594;</div>
+        <div class="arrow" onclick="moveToNextMessage()">&#8594;</div>
         <!-- Heart icon will be shown when popup is triggered -->
         <div class="heart">&#10084;</div>
     </div>
 
     <div class="popup" id="popup">
         <div class="popup-box">
-            <p style="font-family: 'Times New Roman';">Apply to join our service</p>
+            <p style="font-family: 'Times New Roman';">Thank you! <br/>Apply to join our service</p>
             <input type="email" placeholder="Enter your email" id="email" />
             <button style="font-family: 'Times New Roman';border: none; background-color: white;" onclick="sendEmail()">&gt;&nbsp;&nbsp;Submit&nbsp;&nbsp;&lt;</button>
         </div>
